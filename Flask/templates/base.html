@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link 
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+      crossorigin="anonymous">
+    <title>{% block title %} Flask Blog {% endblock %}</title>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
+      <a class="navbar-brand" href="{{ url_for('index') }}">FlaskBlog</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('create') }}">New Post</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+      {% block content %}
+      <!-- Example Post -->
+      <div class="post">
+        <div class="d-flex justify-content-between align-items-center">
+          <h5>First Post</h5>
+          <a href="{{ url_for('edit', post_id=1) }}" class="btn btn-primary btn-sm">Edit</a>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+      </div>
+      
+      <hr>
+      
+      <!-- Another Post -->
+      <div class="post">
+        <div class="d-flex justify-content-between align-items-center">
+          <h5>Second Post</h5>
+          <a href="{{ url_for('edit', post_id=2) }}" class="btn btn-primary btn-sm">Edit</a>
+        </div>
+        <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.</p>
+      </div>
+      {% endblock %}
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script 
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+      crossorigin="anonymous"></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+      integrity="sha384-UO2eT0CpHqdSJQ6fuhKVw2VvM9K9tZT4lxUS9l+vxX9fY5RRuWldNRPpFgi" 
+      crossorigin="anonymous"></script>
+    <script 
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy3ejiNJq4l4Ge+IBmZBOe6l6x/4CkFK5RItj" 
+      crossorigin="anonymous"></script>
+  </body>
+</html>
